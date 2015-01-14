@@ -1,0 +1,27 @@
+<h1>Listing joysticks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @joysticks.each do |joystick| %>
+      <tr>
+        <td><%= joystick.x %></td>
+        <td><%= joystick.y %></td>
+        <td><%= link_to 'Show', joystick %></td>
+        <td><%= link_to 'Edit', edit_joystick_path(joystick) %></td>
+        <td><%= link_to 'Destroy', joystick, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Joystick', new_joystick_path %>
